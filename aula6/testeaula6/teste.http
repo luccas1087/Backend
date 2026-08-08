@@ -1,0 +1,8 @@
+### Listar todos os alunos
+GET http://localhost:3000/alunos
+
+### Buscar aluno pelo id 1
+GET http://localhost:3000/alunos/1
+
+### Tentar buscar um id que nao existe
+GET http://localhost:3000/alunos/99
