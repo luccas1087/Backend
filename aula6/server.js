@@ -11,7 +11,6 @@ let livros = [
 
 let proximoId = 5;
 
-// GET /livros -> lista todos os livros
 app.get('/livros', (req, res) => {
     res.json(livros);
 });
@@ -27,7 +26,6 @@ app.get('/livros/:id', (req, res) => {
     res.json(livro);
 });
 
-// POST /livros -> cria um novo livro
 app.post('/livros', (req, res) => {
     const novoLivro = {
         id: proximoId,

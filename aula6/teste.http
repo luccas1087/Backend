@@ -1,0 +1,29 @@
+### Listar todos os livros
+GET http://localhost:3000/livros
+
+### Buscar livro pelo id 1
+GET http://localhost:3000/livros/1
+
+### Tentar buscar um id que nao existe
+GET http://localhost:3000/livros/99
+
+### Criar um novo livro
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+    "nome": "Duna",
+    "preco": 39.90
+}
+
+### Atualizar o livro de id 1
+PUT http://localhost:3000/livros/1
+Content-Type: application/json
+
+{
+    "nome": "Box Senhor dos Aneis - Edicao Especial",
+    "preco": 189.99
+}
+
+### Remover o livro de id 2
+DELETE http://localhost:3000/livros/2
