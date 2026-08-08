@@ -1,0 +1,83 @@
+### Listar todos os livros
+GET http://localhost:3000/livros
+
+### Buscar livro pelo id 1
+GET http://localhost:3000/livros/1
+
+### Tentar buscar um id que nao existe (espera 404)
+GET http://localhost:3000/livros/99
+
+### Criar um novo livro (espera 201)
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+    "nome": "Duna",
+    "preco": 39.90
+}
+
+### POST sem nome (espera 400)
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+    "preco": 25.90
+}
+
+### POST sem preco (espera 400)
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+    "nome": "1984"
+}
+
+### POST com preco negativo (espera 400)
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+    "nome": "1984",
+    "preco": -10
+}
+
+### POST com preco invalido, tipo texto (espera 400)
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+    "nome": "1984",
+    "preco": "caro"
+}
+
+### Atualizar o livro de id 1 (espera 200)
+PUT http://localhost:3000/livros/1
+Content-Type: application/json
+
+{
+    "nome": "Box Senhor dos Aneis - Edicao Especial",
+    "preco": 189.99
+}
+
+### PUT em id que nao existe (espera 404)
+PUT http://localhost:3000/livros/999
+Content-Type: application/json
+
+{
+    "nome": "Teste",
+    "preco": 10
+}
+
+### PUT com dados invalidos (espera 400)
+PUT http://localhost:3000/livros/1
+Content-Type: application/json
+
+{
+    "preco": -5
+}
+
+### Remover o livro de id 2 (espera 200)
+DELETE http://localhost:3000/livros/2
+
+### DELETE em id que nao existe (espera 404)
+DELETE http://localhost:3000/livros/999
